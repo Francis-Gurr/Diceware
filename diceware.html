@@ -146,7 +146,7 @@ function submit() {
     var passphrase = "";
     for (i = 0; i < length; i++){
       var wordID = Math.floor((Math.random() * 8192) + 1);
-      var word = getWord2(wordID);
+      var word = getWord1(wordID);
       var passphrase = passphrase.concat(word);
     }
     //return passphrase
@@ -156,7 +156,7 @@ function submit() {
 function getWord(wordID) {
 
         var client = new XMLHttpRequest();
-        client.open('GET', 'file:///C:/Users/franc/Documents/GitHub/Diceware/diceware8k.txt');
+        client.open('GET', 'http://www.francisgurr.com/Diceware/diceware8k.txt');
         client.onreadystatechange = function()
         {
 
@@ -166,7 +166,7 @@ function getWord(wordID) {
                 return wordList[wordID-1];
             }
         }
-        //client.send(null);
+        client.send(null);
 }
 function getWord2(wordID)
 {
