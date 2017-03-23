@@ -139,42 +139,27 @@
 <!-- JS -->
 <script>
 function submit() {
-    var x = document.getElementById("form");
-    var length = x.elements[0].value;
-    var special = x.elements[1].value;
-    //do stuff
+    var form = document.getElementById("form");
+    var length = form.elements[0].value;
+    var special = form.elements[1].value;
+    //Reset passphrase
     var passphrase = "";
     document.getElementById("passphrase").innerHTML = passphrase;
+    //Loop to get number (length) of words required
     for (i = 0; i < length; i++){
+      //Get a random number
       var wordID = Math.floor((Math.random() * 8192) + 1);
-      passphrase = getWord2(wordID, passphrase);
-      //var passphrase = passphrase.concat(word);
+      //Retrieve word from wordlist and update passphrase
+      passphrase = getWord(wordID, passphrase);
     }
     //return passphrase
     document.getElementById("passphrase").innerHTML = passphrase;
 }
 
-function getWord(wordID) {
-
-        var client = new XMLHttpRequest();
-        client.open('GET', 'http://www.francisgurr.com/Diceware/diceware8k.txt');
-        client.onreadystatechange = function()
-        {
-
-            if( client.responseText != '' )
-            {
-                var wordList = client.responseText.split("\n");
-                var passphrase = document.getElementById("passphrase").textContent;
-                passphrase = passphrase.concat(wordList[wordID-1]);
-                document.getElementById("passphrase").innerHTML = passphrase;
-            }
-        }
-        client.send(null);
-}
-function getWord2(wordID, passphrase)
+function getWord(wordID, passphrase)
 {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", 'http://www.francisgurr.com/Diceware/diceware8k.txt', false);
+    rawFile.open("GET", "http://www.francisgurr.com/Diceware/diceware8k.txt", false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
@@ -192,8 +177,6 @@ function getWord2(wordID, passphrase)
 
 
 
-
 </script>
-
 </body>
 </html>
