@@ -165,6 +165,7 @@ function getWord(wordID) {
                 var wordList = client.responseText.split("\n");
                 var passphrase = document.getElementById("passphrase").textContent;
                 passphrase = passphrase.concat(wordList[wordID-1]);
+                document.getElementById("passphrase").innerHTML = passphrase;
             }
         }
         client.send(null);
