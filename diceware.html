@@ -143,14 +143,15 @@ function submit() {
     var length = x.elements[0].value;
     var special = x.elements[1].value;
     //do stuff
-    document.getElementById("passphrase").innerHTML = "";
+    var passphrase = "";
+    document.getElementById("passphrase").innerHTML = passphrase;
     for (i = 0; i < length; i++){
       var wordID = Math.floor((Math.random() * 8192) + 1);
-      var word = getWord2(wordID);
+      passphrase = getWord2(wordID, passphrase);
       //var passphrase = passphrase.concat(word);
     }
     //return passphrase
-    //document.getElementById("passphrase").innerHTML = passphrase;
+    document.getElementById("passphrase").innerHTML = passphrase;
 }
 
 function getWord(wordID) {
@@ -170,7 +171,7 @@ function getWord(wordID) {
         }
         client.send(null);
 }
-function getWord2(wordID)
+function getWord2(wordID, passphrase)
 {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", 'http://www.francisgurr.com/Diceware/diceware8k.txt', false);
@@ -181,13 +182,12 @@ function getWord2(wordID)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var wordList = rawFile.responseText.split("\n");
-                var passphrase = document.getElementById("passphrase").textContent;
                 passphrase = passphrase.concat(wordList[wordID-1]);
-                document.getElementById("passphrase").innerHTML = passphrase;
             }
         }
     }
     rawFile.send(null);
+    return passphrase;
 }
 
 
