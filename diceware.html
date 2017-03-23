@@ -143,7 +143,7 @@ function submit() {
     var length = x.elements[0].value;
     var special = x.elements[1].value;
     //do stuff
-    var passphrase = "";
+    document.getElementById("passphrase").innerHTML = "";
     for (i = 0; i < length; i++){
       var wordID = Math.floor((Math.random() * 8192) + 1);
       var word = getWord2(wordID);
