@@ -171,7 +171,7 @@ function getWord(wordID) {
 function getWord2(wordID)
 {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", 'http://world.std.com/~reinhold/diceware8k.txt', false);
+    rawFile.open("GET", 'http://www.francisgurr.com/Diceware/diceware8k.txt', false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
@@ -179,7 +179,6 @@ function getWord2(wordID)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var wordList = rawFile.responseText.split("\n");
-                var wordList = client.responseText.split("\n");
                 return wordList[wordID-1];
             }
         }
