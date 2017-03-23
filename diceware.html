@@ -147,10 +147,10 @@ function submit() {
     for (i = 0; i < length; i++){
       var wordID = Math.floor((Math.random() * 8192) + 1);
       var word = getWord(wordID);
-      var passphrase = passphrase.concat(word);
+      //var passphrase = passphrase.concat(word);
     }
     //return passphrase
-    document.getElementById("passphrase").innerHTML = passphrase;
+    //document.getElementById("passphrase").innerHTML = passphrase;
 }
 
 function getWord(wordID) {
@@ -163,7 +163,8 @@ function getWord(wordID) {
             if( client.responseText != '' )
             {
                 var wordList = client.responseText.split("\n");
-                return wordList[wordID-1];
+                var passphrase = document.getElementById("passphrase").textContent;
+                passphrase = passphrase.concat(wordList[wordID-1]);
             }
         }
         client.send(null);
