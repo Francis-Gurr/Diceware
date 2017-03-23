@@ -146,7 +146,7 @@ function submit() {
     var passphrase = "";
     for (i = 0; i < length; i++){
       var wordID = Math.floor((Math.random() * 8192) + 1);
-      var word = getWord(wordID);
+      var word = getWord2(wordID);
       //var passphrase = passphrase.concat(word);
     }
     //return passphrase
@@ -181,7 +181,9 @@ function getWord2(wordID)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var wordList = rawFile.responseText.split("\n");
-                return wordList[wordID-1];
+                var passphrase = document.getElementById("passphrase").textContent;
+                passphrase = passphrase.concat(wordList[wordID-1]);
+                document.getElementById("passphrase").innerHTML = passphrase;
             }
         }
     }
