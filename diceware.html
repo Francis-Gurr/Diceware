@@ -138,7 +138,7 @@
 
 <!-- JS -->
 <script>
-function submit1() {
+function submit() {
     var x = document.getElementById("form");
     var length = x.elements[0].value;
     var special = x.elements[1].value;
@@ -146,15 +146,11 @@ function submit1() {
     var passphrase = "";
     for (i = 0; i < length; i++){
       var wordID = Math.floor((Math.random() * 8192) + 1);
-      var word = getWord(wordID);
+      var word = getWord2(wordID);
       var passphrase = passphrase.concat(word);
     }
     //return passphrase
     document.getElementById("passphrase").innerHTML = passphrase;
-}
-
-function submit(){
-  readTextFile('http://world.std.com/~reinhold/diceware8k.txt');
 }
 
 function getWord(wordID) {
@@ -171,36 +167,20 @@ function getWord(wordID) {
             }
         }
         //client.send(null);
-
-        /*
-        var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "file:///C:/Users/franc/Documents/GitHub/Diceware/diceware8k.txt");
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                alert(allText);
-            }
-        }
-    }
-    rawFile.send(null);
-    */
 }
-function readTextFile(file)
+function getWord2(wordID)
 {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
+    rawFile.open("GET", 'http://world.std.com/~reinhold/diceware8k.txt', false);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
-                var allText = rawFile.responseText;
-                document.getElementById("passphrase").innerHTML = allText;
+                var wordList = rawFile.responseText.split("\n");
+                var wordList = client.responseText.split("\n");
+                return wordList[wordID-1];
             }
         }
     }
