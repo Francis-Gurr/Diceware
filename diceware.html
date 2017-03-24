@@ -160,7 +160,7 @@ function submit() {
   for(i = 0; i < (8192*1000000);i++){
     var buf = new Uint8Array(2);
     window.crypto.getRandomValues(buf);
-    var val = ()(buf[0] << 8) + buf[1])%8191;
+    var val = ((buf[0] << 8) + buf[1])%8191;
     var count[val] = count[val]+1;
   }
   document.getElementById("passphrase").innerHTML = count.toString();
