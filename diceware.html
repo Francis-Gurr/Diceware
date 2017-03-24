@@ -157,19 +157,10 @@ function submit1() {
 }
 
 function submit() {
-    var min = 0;
-    var max = 8191;
-    var range = max - min;
-    var requestBytes = Math.ceil(Math.log2(range) / 8);
-    var maxNum = Math.pow(256, requestBytes);
-    var ar = new Uint8Array(2);
-
-    while (true) {
-        window.crypto.getRandomValues(ar);
-        var val = (ar[0] << 8) + ar[1];
-        document.getElementById("passphrase").innerHTML = val % range;
-        }
-    }
+    var buf = new Uint8Array(2);
+    window.crypto.getRandomValues(buf);
+    var val = (buf[0] << 8) + buf[1];
+    document.getElementById("passphrase").innerHTML = val % 8191;
   }
 
 function getWord(wordID, passphrase)
