@@ -148,23 +148,14 @@ function submit1() {
     //Loop to get number (length) of words required
     for (i = 0; i < length; i++){
       //Get a random number
-      var wordID = Math.floor((Math.random() * 8192) + 1);
+      var buf = new Uint8Array(2);
+      window.crypto.getRandomValues(buf);
+      var wordID = ((buf[0] << 8) + buf[1]) % 8191;
       //Retrieve word from wordlist and update passphrase
       passphrase = getWord(wordID, passphrase);
     }
     //return passphrase
     document.getElementById("passphrase").innerHTML = passphrase;
-}
-
-function submit() {
-  var count = new Array();
-  for(i = 0; i < (8192*1000000);i++){
-    var buf = new Uint8Array(2);
-    window.crypto.getRandomValues(buf);
-    var val = ((buf[0] << 8) + buf[1])%8191;
-    count[val] += 1;
-  }
-  document.getElementById("passphrase").innerHTML = count.toString();
 }
 
 function getWord(wordID, passphrase)
