@@ -164,12 +164,12 @@ function submit() {
     }
     document.getElementById("pass").innerHTML = passphrase;
     if (special) {
-      var specialMatrix = [["~","\u0026","+",":","?","4"], //hex code: &
+      var specialMatrix = [["~","&amp","+",":","?","4"], //Entity: &
                           ["!","*","[",";","/","5"],
-                          ["#","(","]",'\u0022',"0","6"], //hex code: "
-                          ["$",")","\u005c","\u0027","1","7"], //hex code: \ , '
-                          ["%","-","{","\u003c","2","8"], //hex code: <
-                          ["^","=","}","\u003e","3","9"]]; //hex code: >
+                          ["#","(","]",'&quot',"0","6"], //Entity: "
+                          ["$",")","\u005c","\u0027","1","7"], //Hex code: \ , '
+                          ["%","-","{","&lt","2","8"], //Entity: <
+                          ["^","=","}","&gt","3","9"]]; //Entity: >
       var position = randrange(0, passphrase.length + 1);
       var col = randrange(0, 6);
       var row = randrange(0, 6);
