@@ -150,7 +150,7 @@
 function submit() {
     var form = document.getElementById("form");
     var length = form.elements[0].value;
-    var special = form.elements[1].value;
+    var special = form.elements[1].checked;
     //Reset passphrase
     var passphrase = "";
     document.getElementById("passphrase").innerHTML = passphrase;
