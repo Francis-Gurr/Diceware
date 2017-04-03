@@ -162,12 +162,12 @@ function submit() {
       passphrase = getWord(wordID, passphrase);
     }
     if (special) {
-      var specialMatrix = [["~","&","+",":","?","4"],
+      var specialMatrix = [["~","\u0026","+",":","?","4"], //hex code: &
                           ["!","*","[",";","/","5"],
-                          ["#","(","]",'"',"0","6"],
-                          ["$",")","\\","'","1","7"],
-                          ["%","-","{","<","2","8"],
-                          ["^","=","}",">","3","9"]];
+                          ["#","(","]",'\u0022',"0","6"], //hex code: "
+                          ["$",")","\u005c","\u0027","1","7"], //hex code: \ , '
+                          ["%","-","{","\u003c","2","8"], //hex code: <
+                          ["^","=","}","\u003e","3","9"]]; //hex code: >
       var position = randrange(0, passphrase.length + 1);
       var col = randrange(0, 6);
       var row = randrange(0, 6);
