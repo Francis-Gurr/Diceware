@@ -169,8 +169,8 @@ function submit() {
                           ["%","-","{","<","2","8"],
                           ["^","=","}",">","3","9"]];
       var position = randrange(0, passphrase.length);
-      var col = randrange(1, 6);
-      var row = randrange(1, 6);
+      var col = randrange(0, 6);
+      var row = randrange(0, 6);
       passphrase = passphrase.slice(0, position) + specialMatrix[col][row] + passphrase.slice(position);
     }
     //return passphrase
