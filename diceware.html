@@ -59,18 +59,37 @@
     width: 70%;
   }
   input[type="number"]{
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 2px;
+    color: #555555;
+    box-shadow: 0px 0px 2px black inset;
     width: 55px;
     margin-left: 14px;
     padding-left: 10px;
     text-align: center;
-    color: #555555;
   }
   input[type="checkbox"]{
+    color: #555555;
+    text-align: center;
     margin: 10px;
     transform: scale(1.5);
   }
   input[type="submit"]{
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 2px;
     color: #555555;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 0px 2px black inset;
+  }
+  .output{
+    margin-top: 10px;
+    padding-left: 5px;
+    background-color: #f8f8f8;
+    color: #555555;
+    box-shadow: 0px 0px 1px black inset;
   }
   .navbar {
       padding: 0px 25px;
@@ -165,7 +184,7 @@
       <br>
       <input type="submit">
     </form>
-    <p id="passphrase">Your Passphrase</p>
+    <p class="output" id="passphrase">Your Passphrase</p>
   </div>
 </div>
 
