@@ -87,6 +87,30 @@
     opacity: 0.25;
     display: none;
   }
+  /* Adjust format for medium (tablet) screens */
+  @media screen and (max-width: 768px){
+      .container-fluid {
+        padding: 25px 50px;
+      }
+  }
+  /* Adjust format for small (mobile) screens */
+  @media screen and (max-width: 480px) {
+      p {font-size: 13px;}
+      footer,
+      footer p,
+      footer a {
+        font-size: 16px;
+      }
+      .container-fluid {
+        padding: 0;
+      }
+      .footer-bull {
+        display: none;
+      }
+      .footer-br {
+        display: inherit;
+      }
+  }
   </style>
 </head>
 <body>
