@@ -132,6 +132,7 @@
       <br>
       <input type="submit">
     </form>
+    <p id="pass">Your Passphrase</p>
     <p id="passphrase">Your Passphrase</p>
   </div>
 </div>
@@ -161,6 +162,7 @@ function submit() {
       //Retrieve word from wordlist and update passphrase
       passphrase = getWord(wordID, passphrase);
     }
+    document.getElementById("pass").innerHTML = passphrase;
     if (special) {
       var specialMatrix = [["~","\u0026","+",":","?","4"], //hex code: &
                           ["!","*","[",";","/","5"],
