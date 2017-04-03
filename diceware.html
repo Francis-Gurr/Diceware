@@ -83,10 +83,6 @@
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
   }
-  .hr-2{
-    opacity: 0.25;
-    display: none;
-  }
   /* Adjust format for medium (tablet) screens */
   @media screen and (max-width: 768px){
       .container-fluid {
@@ -95,11 +91,20 @@
   }
   /* Adjust format for small (mobile) screens */
   @media screen and (max-width: 480px) {
+      body {
+        font-size: 13px;
+      }
       p {font-size: 13px;}
       footer,
       footer p,
       footer a {
         font-size: 16px;
+      }
+      input[type="number"]{
+        width: 50px;
+      }
+      input[type="checkbox"]{
+        transform: scale(1);
       }
       .container-fluid {
         padding: 0;
