@@ -15,6 +15,8 @@
       font: 16px Montserrat, sans-serif;
       line-height: 1.8;
       color: #f5f6f7;
+      height: 100%;
+      background-color: hsl(240, 50%, 10%); /* Navy */
   }
   p {font-size: 16px;}
   p a:hover,
@@ -23,6 +25,9 @@
   }
   footer,
   footer p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     padding: 10px 0 5px;
     background-color: #f8f8f8;
     color: #777777;
@@ -46,15 +51,14 @@
     background-color: hsl(240, 50%, 10%); /* Navy */
     color: #fff;
   }
-  .bg-2 {
-      background-color: #ffffff; /* White */
-      color: #555555;
-  }
   .container-fluid{
-    height:auto;
-    padding:100px 0px;
+    width: auto;
+    min-height: 100%;
+    height: auto;
+    position: relative;
   }
   .content{
+    padding: 100px 0px;
     margin: auto;
     width: 70%;
   }
@@ -190,7 +194,7 @@
 </div>
 
 <!-- Footer (Contact)-->
-<footer id="contact">
+<footer class="container-fluid" id="contact">
   <a href="mailto:f.b.gurr@durham.ac.uk?"><i class="fa fa-envelope"></i> f.b.gurr@durham.ac.uk</a>
   <span class="footer-bull">&bull;</span>
   <br class="footer-br">
