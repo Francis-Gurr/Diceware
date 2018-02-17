@@ -18,60 +18,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="http:/francisgurr.com/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   body {
-      font: 16px Montserrat, sans-serif;
-      line-height: 1.8;
-      color: #f5f6f7;
-      height: 100%;
-      background-color: hsl(240, 50%, 10%); /* Navy */
+    height: 100%;
+    background-color: #0d0d26; /* Navy */
   }
-  p {font-size: 16px;}
-  p a:hover,
-  p a:focus{
-    text-decoration: underline;
-  }
-  footer, footer p{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0 5px;
-    background-color: #f8f8f8;
-    color: #777777;
-    font-size: 20px;
-    letter-spacing: 5px;
-    text-align: center;
-  }
-  footer a {
-    color: #777777;
-    font-size: 24px;
-  }
-  footer a:hover,
-  footer a:focus {
-    color: #555555;
-  }
-  .footer-br {
-    display: none;
-  }
-  .margin {margin-bottom: 25px;}
-  .bg-1 {
-    background-color: hsl(240, 50%, 10%); /* Navy */
-    color: #fff;
-  }
-  .holder{
+  .container-fluid {
     min-height: 100%;
-    position: relative;
-  }
-  .container-fluid{
-    padding: 100px 0px;
-    width: auto;
-  }
-  .content{
-
-    margin: auto;
-    width: 70%;
   }
   input[type="number"]{
     background-color: #f8f8f8;
@@ -106,60 +62,10 @@
     color: #555555;
     box-shadow: 0px 0px 1px black inset;
   }
-  .navbar {
-      padding: 0px 25px;
-      border: 0;
-      border-radius: 0;
-      margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
-  }
-  .navbar-nav  li a:hover {
-      color: #1abc9c !important;
-  }
-  /* Adjust format for medium (tablet) screens */
-  @media screen and (max-width: 768px){
-      .container-fluid {
-        padding: 25px 50px;
-      }
-  }
-  /* Adjust format for small (mobile) screens */
-  @media screen and (max-width: 480px) {
-      body {
-        font-size: 13px;
-      }
-      p {font-size: 13px;}
-      footer,
-      footer p,
-      footer a {
-        font-size: 16px;
-      }
-      input[type="number"]{
-        padding: 0;
-        width: auto;
-      }
-      input[type="checkbox"]{
-        transform: scale(1);
-      }
-      .container-fluid {
-        padding: 0px;
-      }
-      .content{
-        width: 90%;
-      }
-      .footer-bull {
-        display: none;
-      }
-      .footer-br {
-        display: inherit;
-      }
-  }
   </style>
 </head>
 <body>
 
-<div class="holder">
-</div>
 <!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container-navbar">
@@ -209,12 +115,11 @@
 <!-- Footer (Contact)-->
 <footer id="contact">
   <a href="mailto:f.b.gurr@durham.ac.uk?"><i class="fa fa-envelope"></i> f.b.gurr@durham.ac.uk</a>
-  <span class="footer-bull">&bull;</span>
-  <br class="footer-br">
+  <span id="footer-bull">&bull;</span>
+  <br id="footer-br">
   <a href="https://uk.linkedin.com/in/francis-gurr"><i class="fa fa-linkedin-square"></i></a>
   <a href="https://github.com/Francis-Gurr"><i class="fa fa-github"></i></a>
 </footer>
-</div>
 
 <!-- JS -->
 <script>
